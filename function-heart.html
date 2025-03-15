@@ -1,0 +1,83 @@
+<!DOCTYPE ht<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <title>Heart & Confession</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="function-heart.css">
+    <link rel="stylesheet" href="valentine-confession.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=DM+Serif+Display:ital@0;1&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="obal">
+        <canvas id="c"></canvas>
+        <p class="instruction" style="font-family: Cinzel, serif; font-size: 24px; letter-spacing: 1px;">Click the heart!</p>
+        <script>
+            var b = document.body;
+            var c = document.getElementsByTagName('canvas')[0];
+            var a = c.getContext('2d');
+            document.body.clientWidth; 
+        </script>
+    </div>
+
+    
+    <div class="heart" onclick="playHeartSound()">
+    </div>
+    <script src="function-heart.js"></script>
+
+    <div class="container" style="display: none;">
+        <label>
+        <div class="heart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"></img>
+        </div>
+        <input id="messageState" type="checkbox" style="display:none"/>
+        </label>
+        <div class="message">
+            <h1 style="font-family: Cinzel, serif; font-size: 40px; letter-spacing: 1.2px;">Dear Roza,</h1>
+            <p> 
+                <span>
+                    &emsp; I never thought fate would give me a second chance—to talk to you, to be around you. And yet, my heart still beats like it always did, refusing to learn the difference between a friend and something more.
+                </span>
+                <br> <br>
+                <span>
+                    &emsp; Every moment I talk to you, every time I see your picture, it feels like the universe reminding me why I never gave up. I know I can’t say these things to you directly, maybe I never will. But if my heart could speak for itself, it would say—Roza, you are the one thing I could never stop caring about. No matter where life takes us, no matter how much time passes, my feelings remain.  But if you say yes, I promise to make every day feel like Valentine’s Day for you—to cherish you, to make you smile, and to remind you just how much you mean to me.
+                </span>      
+            </p>
+            <br>
+            <div class="sincere">
+                <p style="font-weight: bold;"> With Love,</p>
+                <p>Your Gourav</p>
+             </div>
+             <audio id="bgMusic" loop>
+                <source src="audio2.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            
+            <script>
+                document.getElementById("obal").addEventListener("click", function () {
+                    document.querySelector(".instruction").style.display = "none"; // "Click the heart!" text hide hoga
+                    document.querySelector(".container").style.display = "block"; // Letter dikhana hai
+            
+                    // Autoplay background music
+                    var audio = document.getElementById("bgMusic");
+                    audio.play();
+                });
+            </script>
+        </div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="jquery2.1.js"></script>
+    <script defer src="valentine-confession.js"></script>
+
+    <script>
+        document.getElementById("obal").addEventListener("click", function () {
+            document.getElementById("obal").style.display = "none"; 
+            document.querySelector(".container").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
